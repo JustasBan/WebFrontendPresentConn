@@ -17,7 +17,7 @@ const OrderCreator = () => {
     };
 
     const handleAddSize = (event) => {
-        if (selectedOption1 != "-1")
+        if (selectedOption1 !== "-1")
             setOrder({ ...order, size: selectedOption1 });
 
         event.preventDefault()
@@ -27,7 +27,7 @@ const OrderCreator = () => {
     const [selectedOption2, setSelectedOption2] = useState(null);
 
     useEffect(() => {
-        if (fetch.toppings[0] != undefined) {
+        if (fetch.toppings[0] !== undefined) {
             setSelectedOption2(fetch.toppings[0].id)
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -36,7 +36,7 @@ const OrderCreator = () => {
     const handleChangeTopping = (event) => {
         let selectedValue = event.target.value;
 
-        if (selectedValue != "")
+        if (selectedValue !== "")
             setSelectedOption2(selectedValue);
     };
 
@@ -44,7 +44,7 @@ const OrderCreator = () => {
         event.preventDefault()
         let new_tops = order.toppings
 
-        if (selectedOption2 != null) {
+        if (selectedOption2 !== null) {
             new_tops.push(selectedOption2)
         }
         setOrder({ ...order, toppings: new_tops })
@@ -70,7 +70,7 @@ const OrderCreator = () => {
 
                     <select value={selectedOption2 || ''} onChange={handleChangeTopping}>
                         {
-                            fetch.toppings != [] && fetch.toppings.map((topping) => (
+                            fetch.toppings !== [] && fetch.toppings.map((topping) => (
                                 <option key={topping.id} value={topping.id}>
                                     {topping.name}
                                 </option>
@@ -84,7 +84,7 @@ const OrderCreator = () => {
 }
 
 const PriceEstimation = () => {
-    const { fetch, setFetch } = useFetch();
+    const { fetch } = useFetch();
     const { order, setOrder } = useOrder();
     const [price, setPrice] = useState(0);
 
@@ -111,7 +111,7 @@ const PriceEstimation = () => {
             </div>
             <div>
                 <b>Toppings:</b>
-                {order.toppings.length == 0 && <p>No toppings selected</p>}
+                {order.toppings.length === 0 && <p>No toppings selected</p>}
                 {order.toppings.length > 0 && order.toppings.map((topping, index) => (
                     <div key={index} style={{ display: "block ruby" }}>
                         <p >{fetch.toppings[parseInt(topping) - 1].name}</p>
@@ -125,7 +125,7 @@ const PriceEstimation = () => {
 }
 
 const OrderSubmit = () => {
-    const { order, setOrder } = useOrder();
+    const { order } = useOrder();
     const [data, setData] = useState(
         {
             name: "",

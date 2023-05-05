@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useFetch } from "./FetchContext";
 
 const ToppingsList = () => {
-    const { fetch, setFetch } = useFetch();
+    const { fetch } = useFetch();
 
     return (
         <div className="toppings_list_container">

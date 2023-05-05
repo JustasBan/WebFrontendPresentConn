@@ -5,7 +5,7 @@ import { useFetch } from "./FetchContext";
 import { getEstimate, postOrder } from "../../Services/pizzaOrders";
 
 const OrderCreator = () => {
-    const { fetch, setFetch } = useFetch();
+    const { fetch } = useFetch();
     const { order, setOrder } = useOrder();
 
     //size handling:

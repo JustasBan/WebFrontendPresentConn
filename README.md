@@ -3,9 +3,9 @@
 ## Running development front-end:
 
 ### 1. run back-end api
-### 2. `npm start`
+### 2. `npm start` the project
 
-## Test data:
+## Test data for development API:
 ### Multiple toppings:
 [
   {

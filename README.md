@@ -1,4 +1,4 @@
-# "Present connection" 2023 Internship task
+# Front-end of "Present connection" 2023 Internship task
 Front-end was made in React with integrated API endpoints from back-end & bootstrap styling. 
 
 ## Running production:

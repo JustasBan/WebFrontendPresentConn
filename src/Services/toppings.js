@@ -5,7 +5,7 @@ export async function postTopping(topping) {
     let data = {"name": topping}
 
     return await axios.post(
-      `${apiUrl}/api/Toppings`,
+      `${apiUrl}/api/Toppings/AddTopping`,
       data
     );
 }

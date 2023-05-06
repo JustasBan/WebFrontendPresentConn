@@ -4,9 +4,10 @@ import { FetchProvider, useFetch } from "./FetchContext"
 import { getToppings } from "../../Services/toppings";
 import { getSizes } from "../../Services/pizzaOrders";
 import { useEffect } from "react";
+import { Container, Row, Col, Alert, Spinner } from 'react-bootstrap';
 
-/* Container for toppings in various fetch states */
-const Container = () => {
+/* FetchContainer for toppings in various fetch states */
+const FetchContainer = () => {
     const { fetch, setFetch } = useFetch();
 
     useEffect(() => {
@@ -23,19 +24,31 @@ const Container = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    if (fetch.state === "fetching") {
-        return <div className="fetch_loading_container">Loading...</div>;
-    } else if (fetch.state === "failed") {
+    if (fetch.state === 'fetching') {
         return (
-            <div className="fetch_failed_container">Failed to fetch data.</div>
+            <Container className="text-center mt-5">
+                <Spinner animation="border" role="status" className="mb-3" />
+                <div>Loading...</div>
+            </Container>
         );
-    } else if (fetch.state === "fetched") {
-
+    } else if (fetch.state === 'failed') {
         return (
-            <div className="fetch_success_container">
-                <Order />
-                <Toppings />
-            </div>
+            <Container className="text-center mt-5">
+                <Alert variant="danger">Failed to fetch data.</Alert>
+            </Container>
+        );
+    } else if (fetch.state === 'fetched') {
+        return (
+            <Container>
+                <Row>
+                    <Col lg={9}>
+                        <Order />
+                    </Col>
+                    <Col lg={3}>
+                        <Toppings />
+                    </Col>
+                </Row>
+            </Container>
         );
     }
 };
@@ -45,7 +58,7 @@ export const Uploads = () => {
     return (
         <div>
             <FetchProvider>
-                <Container />
+                <FetchContainer />
             </FetchProvider>
         </div>
     )

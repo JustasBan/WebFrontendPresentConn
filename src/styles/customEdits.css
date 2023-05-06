@@ -1,0 +1,30 @@
+h2{
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.list-group-item{
+    border: 0;
+}
+
+.toppings{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.dropdown{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.uploadButton {
+    margin-top: 10px;
+}
+
+ul{
+    margin-bottom: 0px;
+}
+
+li{
+    width: fit-content;
+}

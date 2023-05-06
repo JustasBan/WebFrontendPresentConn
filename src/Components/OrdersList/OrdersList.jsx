@@ -4,12 +4,8 @@ import { Spinner, Table, Alert, Container } from 'react-bootstrap';
 
 const OrdersTable = ({ orders, sizes }) => {
     let formatDate = (dateString) => {
-        const date = new Date(dateString);
+        const date = new Date(dateString)
         
-        if (process.env.NODE_ENV === 'production') {
-            date.setHours(date.getHours() + 3);
-          }
-
         const year = date.getFullYear();
         const month = String(date.getMonth() + 1).padStart(2, '0');
         const day = String(date.getDate()).padStart(2, '0');

@@ -8,5 +8,5 @@ CI pipeline was set up with Github Actions & Azure
 
 ## Running development:
 
-### 1. [run back-end api](https://github.com/JustasBan/WebBackPresentConn)
-### 2. `npm start` the project in root directory
+#### 1. [run back-end api](https://github.com/JustasBan/WebBackPresentConn)
+#### 2. `npm start` the project in root directory
